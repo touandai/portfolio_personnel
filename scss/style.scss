@@ -6,22 +6,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background: $bg;
   color: $text;
   font-family: $font-body;
   line-height: 1.6;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 button {
   font-family: inherit;
 }
+
 img {
   max-width: 100%;
   display: block;
@@ -32,7 +37,9 @@ img {
   margin-inline: auto;
 }
 
-// HEADER //
+// =====================================================
+// HEADER
+// =====================================================
 
 .header {
   position: fixed;
@@ -40,7 +47,7 @@ img {
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(8, 11, 18, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid $border;
 
@@ -74,6 +81,7 @@ img {
     font-size: 14px;
     font-weight: 500;
     transition: $transition;
+
     &:hover,
     &.active {
       color: $text;
@@ -122,7 +130,7 @@ img {
     border: 1px solid $border;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(17, 24, 27, 0.05);
       border-color: $border-hover;
     }
   }
@@ -132,8 +140,8 @@ img {
     color: $bg;
 
     &:hover {
-      background: $surface;
-      color: $text;
+      background: #000000;
+      color: #ffffff;
     }
   }
 }
@@ -154,7 +162,7 @@ img {
 
   &:hover {
     border-color: $border-hover;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(17, 24, 27, 0.04);
   }
 
   span {
@@ -164,6 +172,10 @@ img {
     transition: $transition;
   }
 }
+
+// =====================================================
+// HERO
+// =====================================================
 
 .hero {
   min-height: 100vh;
@@ -175,7 +187,7 @@ img {
 
   background: radial-gradient(
     circle at 80% 30%,
-    rgba(108, 99, 255, 0.12),
+    rgba(25, 191, 178, 0.1),
     transparent 35%
   );
 
@@ -194,7 +206,7 @@ img {
     border: 1px solid $border;
     border-radius: $radius-pill;
     color: $text-muted;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 25px;
   }
 
@@ -203,13 +215,13 @@ img {
     height: 7px;
     border-radius: 50%;
     background: $success;
-    box-shadow: 0 0 10px $success;
+    box-shadow: 0 0 10px rgba(40, 184, 106, 0.5);
   }
 
   h1 {
     max-width: 650px;
     font-family: $font-title;
-    font-size: clamp(48px, 6vw, 78px);
+    font-size: clamp(40px, 3vw, 60px);
     line-height: 1.02;
     letter-spacing: -3px;
 
@@ -265,10 +277,14 @@ img {
   justify-content: center;
 }
 
+// =====================================================
+// CODE CARD
+// =====================================================
+
 .code-card {
   width: 100%;
   max-width: 500px;
-  background: $bg;
+  background: $card;
   border: 1px solid $border;
   border-radius: $radius-lg;
   overflow: hidden;
@@ -308,6 +324,7 @@ img {
 .code-line {
   display: flex;
   gap: 20px;
+
   &--indent {
     padding-left: 20px;
   }
@@ -319,8 +336,9 @@ img {
 }
 
 .code-purple {
-  color: #b18cff;
+  color: #7357c9;
 }
+
 .code-blue {
   color: $accent-blue;
 }
@@ -328,9 +346,14 @@ img {
 .code-green {
   color: $success;
 }
+
 .code-white {
   color: $text;
 }
+
+// =====================================================
+// FLOATING CARD
+// =====================================================
 
 .floating-card {
   position: absolute;
@@ -338,7 +361,7 @@ img {
   align-items: center;
   gap: 8px;
   padding: 11px 15px;
-  background: rgba(18, 24, 36, 0.9);
+  background: $border;
   border: 1px solid $border;
   border-radius: $radius-sm;
   box-shadow: $shadow-md;
@@ -363,6 +386,10 @@ img {
   }
 }
 
+// =====================================================
+// SECTIONS
+// =====================================================
+
 .section {
   padding: 120px 0;
 }
@@ -382,10 +409,13 @@ img {
   justify-content: space-between;
   gap: 40px;
   margin-bottom: 55px;
+  div span {
+    font-size: 18px;
+  }
 
   h2 {
     font-family: $font-title;
-    font-size: clamp(35px, 4vw, 52px);
+    font-size: clamp(35px, 4vw, 50px);
     line-height: 1.1;
     letter-spacing: -2px;
 
@@ -400,6 +430,8 @@ img {
     font-size: 14px;
   }
 }
+
+/*  **************************  MES SERVICES ****************** */
 
 .services {
   background: $bg-secondary;
@@ -424,7 +456,7 @@ img {
   position: relative;
   min-height: 230px;
   padding: 30px;
-  background: $card;
+  background: $border;
   border: 1px solid $border;
   border-radius: $radius-md;
   overflow: hidden;
@@ -442,8 +474,9 @@ img {
     display: grid;
     place-items: center;
     margin-bottom: 25px;
-    background: rgba(108, 99, 255, 0.1);
+    background: rgba(25, 191, 178, 0.1);
     border-radius: $radius-sm;
+    color: $primary;
     font-size: 20px;
   }
 
@@ -455,7 +488,7 @@ img {
 
   p {
     max-width: 280px;
-    color: $text-muted;
+    color: $text;
     font-size: 13px;
   }
 
@@ -463,7 +496,7 @@ img {
     position: absolute;
     right: 20px;
     bottom: 15px;
-    color: rgba(255, 255, 255, 0.04);
+    color: rgba(17, 24, 27, 0.04);
     font-family: $font-title;
     font-size: 60px;
     font-weight: 700;
@@ -479,6 +512,18 @@ img {
     color: $primary-light;
   }
 }
+
+div.services__footer p {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.section-label {
+  font-size: 16px;
+}
+// =====================================================
+// AVANTAGES
+// =====================================================
 
 .advantages {
   &__content {
@@ -537,7 +582,7 @@ img {
     display: grid;
     place-items: center;
     border-radius: $radius-sm;
-    background: rgba(108, 99, 255, 0.1);
+    background: rgba(25, 191, 178, 0.1);
     color: $primary;
     font-weight: 700;
   }
@@ -554,11 +599,19 @@ img {
   }
 }
 
+// =====================================================
+// CTA
+// =====================================================
+
 .cta {
   padding: 100px 0;
 
   background:
-    radial-gradient(circle at center, rgba(108, 99, 255, 0.2), transparent 55%),
+    radial-gradient(
+      circle at center,
+      rgba(25, 191, 178, 0.14),
+      transparent 55%
+    ),
     $bg-secondary;
 
   text-align: center;
@@ -587,7 +640,10 @@ img {
   }
 }
 
-// FOOTER //
+// =====================================================
+// FOOTER
+// =====================================================
+
 .footer {
   padding: 35px 0;
   border-top: 1px solid $border;
@@ -612,25 +668,26 @@ img {
   }
 }
 
-/**** *************************** PAGES SERVICES ****************************/
+// =====================================================
+// PAGE SERVICES
+// =====================================================
+
 .page-hero {
   padding: 160px 0 100px;
   background:
     radial-gradient(
       circle at 80% 30%,
-      rgba(108, 99, 255, 0.15),
+      rgba(25, 191, 178, 0.1),
       transparent 40%
     ),
     $bg;
-
   h1 {
     max-width: 800px;
     margin-bottom: 25px;
     font-family: $font-title;
-    font-size: clamp(45px, 6vw, 72px);
+    font-size: clamp(38px, 3vw, 50px);
     line-height: 1.05;
     letter-spacing: -3px;
-
     span {
       display: block;
       color: $primary;
@@ -646,7 +703,14 @@ img {
 
 .services-page {
   background: $bg-secondary;
+  h2 {
+    font-size: 35px;
+  }
 }
+
+// =====================================================
+// TARIFS
+// =====================================================
 
 .pricing {
   background: $bg;
@@ -662,6 +726,12 @@ img {
     color: $text-muted;
     font-size: 12px;
     text-align: center;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  .section-label {
+    font-size: 25px;
   }
 }
 
@@ -685,6 +755,9 @@ img {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
+  }
+  a {
+    background-color: $border;
   }
 
   h3 {
@@ -710,14 +783,26 @@ img {
   }
 
   &--featured {
-    border-color: rgba(108, 99, 255, 0.45);
+    border-color: rgba(25, 191, 178, 0.45);
     box-shadow: $shadow-primary;
   }
 }
 
+p.pricing__note {
+  font-size: 12px;
+  font-weight: 700;
+  color: $danger;
+}
+
+// =====================================================
+// REALISATION
+// =====================================================
+
 .realization {
   background: $bg-secondary;
-
+  h2 {
+    font-size: 40px;
+  }
   &__card {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -741,7 +826,7 @@ img {
   h3 {
     margin-bottom: 20px;
     font-family: $font-title;
-    font-size: clamp(30px, 4vw, 45px);
+    font-size: clamp(28px, 3vw, 35px);
   }
 
   p {
@@ -758,7 +843,7 @@ img {
 
     span {
       padding: 7px 12px;
-      background: rgba(108, 99, 255, 0.1);
+      background: rgba(25, 191, 178, 0.08);
       border: 1px solid $border;
       border-radius: $radius-pill;
       color: $text-muted;
@@ -770,43 +855,52 @@ img {
     min-height: 250px;
     display: grid;
     place-items: center;
+
     background: radial-gradient(
       circle,
-      rgba(108, 99, 255, 0.18),
+      rgba(25, 191, 178, 0.14),
       transparent 65%
     );
+
     border: 1px solid $border;
     border-radius: $radius-md;
 
     i {
       color: $primary;
-      font-size: 100px;
+      font-size: 75px;
       opacity: 0.8;
     }
   }
 }
 
-/* ********************************** PAGE CONTACT ******************************** */
+// =====================================================
+// PAGE CONTACT
+// =====================================================
+
 .contact {
   background: $bg;
+
   &__grid {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 80px;
     align-items: start;
   }
+
   &__info {
     h2 {
       margin-bottom: 20px;
       font-family: $font-title;
-      font-size: clamp(38px, 4vw, 55px);
+      font-size: clamp(38px, 3vw, 55px);
       line-height: 1.05;
       letter-spacing: -2px;
+
       span {
         display: block;
         color: $primary;
       }
     }
+
     > p {
       max-width: 450px;
       margin-bottom: 35px;
@@ -814,6 +908,7 @@ img {
       font-size: 14px;
     }
   }
+
   &__items {
     display: flex;
     flex-direction: column;
@@ -830,29 +925,34 @@ img {
   border: 1px solid $border;
   border-radius: $radius-md;
   transition: $transition;
+
   &:hover {
     border-color: $border-hover;
     transform: translateX(5px);
   }
+
   &__icon {
     width: 42px;
     height: 42px;
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    background: rgba(108, 99, 255, 0.1);
+    background: rgba(25, 191, 178, 0.1);
     border-radius: $radius-sm;
     color: $primary;
     font-size: 18px;
   }
+
   strong,
   small {
     display: block;
   }
+
   strong {
     font-family: $font-title;
     font-size: 14px;
   }
+
   small {
     margin-top: 3px;
     color: $text-muted;
@@ -867,6 +967,7 @@ img {
   border-radius: $radius-lg;
   box-shadow: $shadow-md;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -878,6 +979,7 @@ img {
     cursor: pointer;
   }
 }
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -888,6 +990,7 @@ img {
     font-size: 13px;
     font-weight: 600;
   }
+
   input,
   select,
   textarea {
@@ -901,39 +1004,61 @@ img {
     font-family: $font-body;
     font-size: 13px;
     transition: $transition;
+
     &::placeholder {
       color: $text-subtle;
     }
+
     &:focus {
       border-color: $primary;
-      box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(25, 191, 178, 0.12);
     }
   }
+
   textarea {
     resize: vertical;
     min-height: 150px;
   }
+
   select {
     cursor: pointer;
   }
 }
 
-// TRAIEMENT EMAIL PAGE CONTACT //
+.contact-form__note {
+  margin-top: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: $danger;
+  text-align: center;
+  span {
+    color: $danger;
+    font-weight: 700;
+  }
+}
+
+// =====================================================
+// TRAITEMENT EMAIL PAGE CONTACT
+// =====================================================
+
 .form-message {
   margin-bottom: 25px;
   padding: 15px 18px;
   border-radius: $radius-md;
   font-size: 13px;
   display: none;
+
   &.success,
   &.error {
     display: block;
   }
+
   &.success {
     background: rgba(69, 212, 131, 0.08);
     border: 1px solid rgba(69, 212, 131, 0.25);
     color: $success;
   }
+
   &.error {
     background: rgba(255, 92, 108, 0.08);
     border: 1px solid rgba(255, 92, 108, 0.25);
@@ -941,20 +1066,22 @@ img {
   }
 }
 
-/* ********************************** ANIMATION PAGE ACCUEIL ************************/
-
+// =====================================================
 // ANIMATIONS
+// =====================================================
 
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(25px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -964,43 +1091,53 @@ img {
     opacity: 1;
   }
 }
+
 @keyframes float {
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
+
 .hero__badge {
   animation: fadeUp 0.6s ease forwards;
 }
+
 .hero h1 {
   animation: fadeUp 0.7s ease 0.1s forwards;
   opacity: 0;
 }
+
 .hero__description {
   animation: fadeUp 0.7s ease 0.2s forwards;
   opacity: 0;
 }
+
 .hero__actions {
   animation: fadeUp 0.7s ease 0.3s forwards;
   opacity: 0;
 }
+
 .hero__stats {
   animation: fadeUp 0.7s ease 0.4s forwards;
   opacity: 0;
 }
+
 .code-card {
   animation:
     fadeIn 0.8s ease 0.2s forwards,
     float 5s ease-in-out 1s infinite;
   opacity: 0;
 }
+
 .floating-card {
   animation: float 4s ease-in-out infinite;
 }
+
 .service-card,
 .advantage {
   transition:
@@ -1008,20 +1145,23 @@ img {
     border-color $transition,
     box-shadow $transition;
 }
+
 .service-card:hover {
   transform: translateY(-6px);
   border-color: $border-hover;
   box-shadow: $shadow-md;
 }
+
 .advantage:hover {
   transform: translateY(-4px);
   border-color: $border-hover;
 }
 
-/* *********************************** MES MEDIA QUERY *******************************/
-
-// VERSION MOBILE MENU //
 // =====================================================
+// MEDIA QUERIES
+// =====================================================
+
+// VERSION MOBILE MENU
 
 @media (max-width: $mobile) {
   .nav {
@@ -1038,20 +1178,25 @@ img {
     border: 1px solid $border;
     border-radius: $radius-md;
     box-shadow: $shadow-lg;
+
     &.active {
       display: flex;
     }
+
     &__link {
       padding: 12px 10px;
       border-radius: $radius-sm;
+
       &:hover {
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(17, 24, 27, 0.05);
       }
+
       &.active::after {
         display: none;
       }
     }
   }
+
   .menu-toggle {
     &.active {
       span:nth-child(1) {
@@ -1103,11 +1248,13 @@ img {
   }
 
   // PAGE SERVICE
+
   .realization__card {
     grid-template-columns: 1fr;
   }
 
   // PAGE CONTACT
+
   .contact__grid {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -1117,6 +1264,7 @@ img {
     max-width: 600px;
   }
 }
+
 @media (max-width: $mobile) {
   .container {
     width: min(100% - 30px, $container);
@@ -1206,7 +1354,8 @@ img {
     }
   }
 
-  /* PAGE SERVICE */
+  // PAGE SERVICE
+
   .page-hero {
     padding: 120px 0 70px;
 
@@ -1245,6 +1394,7 @@ img {
   }
 
   // PAGE CONTACT
+
   .contact__form-wrapper {
     padding: 20px;
   }

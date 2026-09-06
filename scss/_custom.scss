@@ -1,44 +1,70 @@
-// VARIABLES
+// VARIABLES — THÈME CLAIR
 
-$bg: #0e2833;
-$bg-secondary: #0b171c;
-$surface: #102127;
-$card: #0d1b21;
+$bg: #ffffff;
 
-$text: #f1f7f8;
-$text-muted: #9aafb5;
-$text-subtle: #52666d;
+$bg-secondary: #f6f8f9;
 
-$primary: #19d3c5;
-$primary-light: #4de8dc;
+$surface: #f0f4f5;
+
+$card: #ffffff;
+
+$text: #11181b;
+
+$text-muted: #5f7076;
+
+$text-subtle: #9aa8ad;
+
+$primary: #19bfb2;
+
+$primary-light: #35d8cb;
+
 $primary-dark: #554de6;
 
-$accent-blue: #55b8ff;
+$accent-blue: #3199df;
 
-$success: #45d483;
-$danger: #ff5c6c;
+$success: #28b86a;
 
-$border: rgba(255, 255, 255, 0.08);
-$border-hover: rgba(108, 99, 255, 0.4);
+$danger: #e54858;
 
-$shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.2);
-$shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
-$shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.4);
-$shadow-primary: 0 0 40px rgba(108, 99, 255, 0.15);
+// BORDURES
+$border: rgba(17, 24, 27, 0.1);
 
+$border-hover: rgba(25, 191, 178, 0.45);
+
+// OMBRES
+$shadow-sm: 0 5px 20px rgba(17, 24, 27, 0.08);
+
+$shadow-md: 0 10px 30px rgba(17, 24, 27, 0.1);
+
+$shadow-lg: 0 20px 50px rgba(17, 24, 27, 0.12);
+
+$shadow-primary: 0 0 40px rgba(25, 191, 178, 0.12);
+
+// TYPOGRAPHIES
 $font-body: "DM Sans", sans-serif;
+
 $font-title: "Space Grotesk", sans-serif;
 
+// LAYOUT
 $container: 1180px;
+
 $header-height: 80px;
 
+// BORDER RADIUS
 $radius-sm: 6px;
+
 $radius-md: 10px;
+
 $radius-lg: 15px;
+
 $radius-pill: 100px;
 
+// TRANSITION
 $transition: 0.3s ease;
 
+// BREAKPOINTS
 $mobile: 650px;
+
 $tablet: 900px;
+
 $desktop: 1200px;
