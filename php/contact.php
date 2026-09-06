@@ -106,7 +106,11 @@ try {
 
     $mail->CharSet = 'UTF-8';
     $mail->SMTPOptions = [
-
+    'ssl' => [
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true,
+    ],
 ];
 
 
