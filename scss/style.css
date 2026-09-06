@@ -891,6 +891,41 @@ p.pricing__note {
   color: #e54858;
 }
 
+/* **************************** RGPD ******************* */
+.privacy-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+.privacy-content h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #11181b;
+}
+.privacy-content p {
+  margin-bottom: 15px;
+  color: #5f7076;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.privacy-content ul {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: #5f7076;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.privacy-content ul li {
+  margin-bottom: 5px;
+}
+.privacy-content a {
+  color: #19bfb2;
+  text-decoration: none;
+}
+.privacy-content a:hover {
+  text-decoration: underline;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
