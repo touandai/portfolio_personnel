@@ -21,11 +21,13 @@
         <nav class="nav">
           <a href="../index.html" class="nav__link">Accueil</a>
           <a href="service.html" class="nav__link">Services</a>
-          <a href="service.html#realisations" class="nav__link">Réalisations</a>
-          <a href="contact.html" class="nav__link active">Contact</a>
+          <a href="service.html#realisations" class="nav__link">
+            Réalisations
+          </a>
+          <a href="contact-github.html" class="nav__link active"> Contact </a>
         </nav>
 
-        <a href="contact.html" class="btn btn--small">
+        <a href="contact-github.html" class="btn btn--small">
           Mon projet
           <i class="bi bi-arrow-right"></i>
         </a>
@@ -112,18 +114,15 @@
               </div>
             </div>
 
-            <!--  ************************** FORMULAIRE CONTACT ******************* -->
+            <!-- ================= FORMULAIRE CONTACT ================= -->
 
             <div class="contact__form-wrapper">
-              <form
-                class="contact-form"
-                action="../php/contact.php"
-                method="post"
-              >
+              <form class="contact-form" id="github-contact-form">
                 <div id="form-message" class="form-message"></div>
 
                 <div class="form-group">
                   <label for="name">Nom</label>
+
                   <input
                     type="text"
                     id="name"
@@ -134,6 +133,7 @@
 
                 <div class="form-group">
                   <label for="email">Email</label>
+
                   <input
                     type="email"
                     id="email"
@@ -144,21 +144,29 @@
 
                 <div class="form-group">
                   <label for="project">Votre projet</label>
+
                   <select id="project" name="project">
                     <option value="">Sélectionnez un service</option>
+
                     <option value="vitrine">Site vitrine</option>
+
                     <option value="ecommerce">Site e-commerce</option>
+
                     <option value="annonces">Site d'annonces</option>
+
                     <option value="sur-mesure">Développement sur mesure</option>
+
                     <option value="maintenance">
                       Modification / maintenance
                     </option>
+
                     <option value="autre">Autre projet</option>
                   </select>
                 </div>
 
                 <div class="form-group">
                   <label for="message">Message</label>
+
                   <textarea
                     id="message"
                     name="message"
@@ -211,6 +219,7 @@
       </div>
     </footer>
 
+    <script src="../js/contact-github.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

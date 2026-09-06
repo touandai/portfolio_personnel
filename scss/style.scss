@@ -789,14 +789,12 @@ img {
 /* ********************************** PAGE CONTACT ******************************** */
 .contact {
   background: $bg;
-
   &__grid {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 80px;
     align-items: start;
   }
-
   &__info {
     h2 {
       margin-bottom: 20px;
@@ -804,13 +802,11 @@ img {
       font-size: clamp(38px, 4vw, 55px);
       line-height: 1.05;
       letter-spacing: -2px;
-
       span {
         display: block;
         color: $primary;
       }
     }
-
     > p {
       max-width: 450px;
       margin-bottom: 35px;
@@ -818,7 +814,6 @@ img {
       font-size: 14px;
     }
   }
-
   &__items {
     display: flex;
     flex-direction: column;
@@ -835,12 +830,10 @@ img {
   border: 1px solid $border;
   border-radius: $radius-md;
   transition: $transition;
-
   &:hover {
     border-color: $border-hover;
     transform: translateX(5px);
   }
-
   &__icon {
     width: 42px;
     height: 42px;
@@ -852,17 +845,14 @@ img {
     color: $primary;
     font-size: 18px;
   }
-
   strong,
   small {
     display: block;
   }
-
   strong {
     font-family: $font-title;
     font-size: 14px;
   }
-
   small {
     margin-top: 3px;
     color: $text-muted;
@@ -877,7 +867,6 @@ img {
   border-radius: $radius-lg;
   box-shadow: $shadow-md;
 }
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -889,7 +878,6 @@ img {
     cursor: pointer;
   }
 }
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -900,7 +888,6 @@ img {
     font-size: 13px;
     font-weight: 600;
   }
-
   input,
   select,
   textarea {
@@ -914,24 +901,43 @@ img {
     font-family: $font-body;
     font-size: 13px;
     transition: $transition;
-
     &::placeholder {
       color: $text-subtle;
     }
-
     &:focus {
       border-color: $primary;
       box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.08);
     }
   }
-
   textarea {
     resize: vertical;
     min-height: 150px;
   }
-
   select {
     cursor: pointer;
+  }
+}
+
+// TRAIEMENT EMAIL PAGE CONTACT //
+.form-message {
+  margin-bottom: 25px;
+  padding: 15px 18px;
+  border-radius: $radius-md;
+  font-size: 13px;
+  display: none;
+  &.success,
+  &.error {
+    display: block;
+  }
+  &.success {
+    background: rgba(69, 212, 131, 0.08);
+    border: 1px solid rgba(69, 212, 131, 0.25);
+    color: $success;
+  }
+  &.error {
+    background: rgba(255, 92, 108, 0.08);
+    border: 1px solid rgba(255, 92, 108, 0.25);
+    color: $danger;
   }
 }
 
@@ -944,13 +950,11 @@ img {
     opacity: 0;
     transform: translateY(25px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -960,53 +964,43 @@ img {
     opacity: 1;
   }
 }
-
 @keyframes float {
   0%,
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-10px);
   }
 }
-
 .hero__badge {
   animation: fadeUp 0.6s ease forwards;
 }
-
 .hero h1 {
   animation: fadeUp 0.7s ease 0.1s forwards;
   opacity: 0;
 }
-
 .hero__description {
   animation: fadeUp 0.7s ease 0.2s forwards;
   opacity: 0;
 }
-
 .hero__actions {
   animation: fadeUp 0.7s ease 0.3s forwards;
   opacity: 0;
 }
-
 .hero__stats {
   animation: fadeUp 0.7s ease 0.4s forwards;
   opacity: 0;
 }
-
 .code-card {
   animation:
     fadeIn 0.8s ease 0.2s forwards,
     float 5s ease-in-out 1s infinite;
   opacity: 0;
 }
-
 .floating-card {
   animation: float 4s ease-in-out infinite;
 }
-
 .service-card,
 .advantage {
   transition:
@@ -1014,13 +1008,11 @@ img {
     border-color $transition,
     box-shadow $transition;
 }
-
 .service-card:hover {
   transform: translateY(-6px);
   border-color: $border-hover;
   box-shadow: $shadow-md;
 }
-
 .advantage:hover {
   transform: translateY(-4px);
   border-color: $border-hover;
