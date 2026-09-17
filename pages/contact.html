@@ -117,11 +117,9 @@
             <div class="contact__form-wrapper">
               <form
                 class="contact-form"
-                action="../php/contact.php"
-                method="post"
+                action="https://formspree.io/f/TON_IDENTIFIANT"
+                method="POST"
               >
-                <div id="form-message" class="form-message"></div>
-
                 <div class="form-group">
                   <label for="name">Nom</label>
                   <input
@@ -129,6 +127,7 @@
                     id="name"
                     name="name"
                     placeholder="Votre nom"
+                    required
                   />
                 </div>
 
@@ -139,21 +138,24 @@
                     id="email"
                     name="email"
                     placeholder="votre@email.com"
+                    required
                   />
                 </div>
 
                 <div class="form-group">
                   <label for="project">Votre projet</label>
-                  <select id="project" name="project">
+                  <select id="project" name="project" required>
                     <option value="">Sélectionnez un service</option>
-                    <option value="vitrine">Site vitrine</option>
-                    <option value="ecommerce">Site e-commerce</option>
-                    <option value="annonces">Site d'annonces</option>
-                    <option value="sur-mesure">Développement sur mesure</option>
-                    <option value="maintenance">
+                    <option value="Site vitrine">Site vitrine</option>
+                    <option value="Site e-commerce">Site e-commerce</option>
+                    <option value="Site d'annonces">Site d'annonces</option>
+                    <option value="Développement sur mesure">
+                      Développement sur mesure
+                    </option>
+                    <option value="Modification / maintenance">
                       Modification / maintenance
                     </option>
-                    <option value="autre">Autre projet</option>
+                    <option value="Autre projet">Autre projet</option>
                   </select>
                 </div>
 
@@ -164,18 +166,30 @@
                     name="message"
                     rows="6"
                     placeholder="Décrivez votre projet..."
+                    required
                   ></textarea>
                 </div>
 
+                <label for="consentement">
+                  <input
+                    type="checkbox"
+                    id="consentement"
+                    name="consentement"
+                    value="accepté"
+                    required
+                  />
+                  J'accepte que les informations renseignées soient utilisées
+                  afin de répondre à ma demande.
+                </label>
+
                 <button type="submit" class="btn">
+                  <i class="bi bi-send"></i>
                   Envoyer ma demande
-                  <i class="bi bi-arrow-right"></i>
                 </button>
 
                 <p class="contact-form__note">
-                  <span>*</span> Formulaire temporairement indisponible. Merci
-                  de me contacter directement via les coordonnées disponibles à
-                  côté.
+                  Vos informations sont utilisées uniquement dans le cadre du
+                  traitement de votre demande.
                 </p>
               </form>
             </div>
