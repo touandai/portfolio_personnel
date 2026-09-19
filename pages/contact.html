@@ -88,7 +88,7 @@
                   </span>
                 </a>
 
-                <a href="mailto:votre-email@example.com" class="contact-item">
+                <a href="mailto:romaric.nganas@yahoo.fr" class="contact-item">
                   <span class="contact-item__icon">
                     <i class="bi bi-envelope"></i>
                   </span>
@@ -117,33 +117,38 @@
             <div class="contact__form-wrapper">
               <form
                 class="contact-form"
-                action="https://formspree.io/f/TON_IDENTIFIANT"
+                action="https://formspree.io/f/mwlpvkzg"
                 method="POST"
               >
                 <div class="form-group">
                   <label for="name">Nom</label>
+
                   <input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Votre nom"
+                    autocomplete="name"
                     required
                   />
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email</label>
+
                   <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="votre@email.com"
+                    autocomplete="email"
                     required
                   />
                 </div>
 
                 <div class="form-group">
                   <label for="project">Votre projet</label>
+
                   <select id="project" name="project" required>
                     <option value="">Sélectionnez un service</option>
                     <option value="Site vitrine">Site vitrine</option>
@@ -161,6 +166,7 @@
 
                 <div class="form-group">
                   <label for="message">Message</label>
+
                   <textarea
                     id="message"
                     name="message"
@@ -170,17 +176,42 @@
                   ></textarea>
                 </div>
 
-                <label for="consentement">
-                  <input
-                    type="checkbox"
-                    id="consentement"
-                    name="consentement"
-                    value="accepté"
-                    required
-                  />
-                  J'accepte que les informations renseignées soient utilisées
-                  afin de répondre à ma demande.
-                </label>
+                <div class="form-group">
+                  <label
+                    for="consentement"
+                    style="
+                      display: flex;
+                      align-items: flex-start;
+                      gap: 8px;
+                      cursor: pointer;
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      id="consentement"
+                      name="consentement"
+                      value="accepté"
+                      required
+                      style="
+                        width: auto;
+                        min-width: 13px;
+                        margin: 3px 0 0;
+                        flex-shrink: 0;
+                      "
+                    />
+
+                    <span>
+                      J'accepte que les informations renseignées soient
+                      utilisées afin de répondre à ma demande.
+                    </span>
+                  </label>
+                </div>
+
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="Nouvelle demande de projet — Portfolio Romaric"
+                />
 
                 <button type="submit" class="btn">
                   <i class="bi bi-send"></i>
@@ -192,6 +223,71 @@
                   traitement de votre demande.
                 </p>
               </form>
+
+              <div
+                id="form-success"
+                hidden
+                style="
+                  margin-top: 24px;
+                  padding: 28px 22px;
+                  text-align: center;
+                  background: #ffffff;
+                  border: 1px solid #e3e5e8;
+                  border-radius: 12px;
+                  box-shadow: 0 10px 30px rgba(11, 49, 87, 0.08);
+                "
+              >
+                <div
+                  style="
+                    width: 56px;
+                    height: 56px;
+                    margin: 0 auto 16px;
+                    display: grid;
+                    place-items: center;
+                    border-radius: 50%;
+                    background: #0b3157;
+                    color: #ffffff;
+                    font-size: 26px;
+                    font-weight: 700;
+                  "
+                  aria-hidden="true"
+                >
+                  ✓
+                </div>
+
+                <h3
+                  style="margin: 0 0 10px; color: #0b3157; font-size: 1.35rem"
+                >
+                  Votre demande a bien été envoyée !
+                </h3>
+
+                <p
+                  style="
+                    margin: 0 auto 8px;
+                    color: #5e6975;
+                    line-height: 1.6;
+                    max-width: 440px;
+                  "
+                >
+                  Merci pour votre message.
+                </p>
+
+                <p
+                  style="
+                    margin: 0 auto 20px;
+                    color: #5e6975;
+                    line-height: 1.6;
+                    max-width: 440px;
+                  "
+                >
+                  Je reviendrai vers vous dans les meilleurs délais.
+                </p>
+
+                <a href="../index.html" class="btn">
+                  <i class="bi bi-house"></i>
+                  Retour à l'accueil
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -235,5 +331,66 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".contact-form");
+        const successMessage = document.getElementById("form-success");
+
+        if (!form || !successMessage) {
+          return;
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const submitButton = form.querySelector('button[type="submit"]');
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.innerHTML =
+              '<i class="bi bi-hourglass-split"></i> Envoi en cours...';
+          }
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (!response.ok) {
+              throw new Error("Erreur lors de l'envoi.");
+            }
+
+            form.hidden = true;
+            successMessage.hidden = false;
+
+            successMessage.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+
+            form.reset();
+          } catch (error) {
+            alert(
+              "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou me contacter directement via WhatsApp.",
+            );
+
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.innerHTML =
+                '<i class="bi bi-send"></i> Envoyer ma demande';
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
